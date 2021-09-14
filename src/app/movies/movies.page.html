@@ -20,7 +20,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let movie of movies">
-          <td>{{movie.Title}}</td>
+          <td routerLink="/movies/{{movie.imdbID}}">{{movie.Title}}</td>
           <td>{{movie.Year}}</td>
         </tr>
       </tbody>

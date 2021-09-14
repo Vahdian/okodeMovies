@@ -1,3 +1,4 @@
+import { MovieDetailPageModule } from './movies/movie-detail/movie-detail.module';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'movies',
     loadChildren: () => import('./movies/movies.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'movies/:id',
+    loadChildren: () => import('./movies/movie-detail/movie-detail.module').then( m =>m.MovieDetailPageModule)
   },
 ];
 
