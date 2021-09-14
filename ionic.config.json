@@ -1,0 +1,7 @@
+{
+  "name": "okodeMovies",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
