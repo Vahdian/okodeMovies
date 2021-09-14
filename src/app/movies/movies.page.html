@@ -8,5 +8,23 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="container">
+    <input type="text" class="form-control" name="filterMovie" placeholder="Search movie..." [(ngModel)]="filterMovie">
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>imdbID</th>
+          <th>Title</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{movie.imdbID}}</td>
+          <td>{{movie.Title}}</td>
+          <td>{{movie.Year}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </ion-content>

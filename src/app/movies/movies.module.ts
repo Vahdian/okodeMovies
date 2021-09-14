@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MoviesPageRoutingModule } from './movies-routing.module';
 
 import { MoviesPage } from './movies.page';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MoviesPageRoutingModule
+    MoviesPageRoutingModule,
+    
   ],
-  declarations: [MoviesPage]
+  declarations: [MoviesPage, FilterPipe]
 })
 export class MoviesPageModule {}
