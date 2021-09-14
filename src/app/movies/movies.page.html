@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>movies</ion-title>
+    <ion-title>MOVIES</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
@@ -9,18 +9,17 @@
 
 <ion-content>
   <div class="container">
-    <input type="text" class="form-control" name="filterMovie" placeholder="Search movie..." [(ngModel)]="filterMovie">
-    <table class="table table-stripped">
+    <input type="text" class="form-control" name="filterMovie" placeholder="Search movie..."
+      (keyup)="getInput($event.target.value)">
+    <table class="table table-dark table-striped">
       <thead>
         <tr>
-          <th>imdbID</th>
           <th>Title</th>
           <th>Date</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let movie of movies">
-          <td>{{movie.imdbID}}</td>
           <td>{{movie.Title}}</td>
           <td>{{movie.Year}}</td>
         </tr>
