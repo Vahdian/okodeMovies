@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from './../../services/data.service';
+
 
 @Component({
   selector: 'app-movie-detail',
@@ -8,13 +10,15 @@ import { Router } from '@angular/router';
 })
 export class MovieDetailPage implements OnInit {
   movie = [];
-  constructor(private router: Router) {
+  constructor(private router: Router, private dataService: DataService) {
   }
 
   ngOnInit() {
     const id = this.router.url.replace('/movies/', '')
-    fetch(`http://www.omdbapi.com/?i=${id}&apikey=fbf39e7`)
-      .then((res) => res.json().then((res) => (this.movie = res)).then(res=>console.log(res)))
+    this.dataService.getMovieDetail(id).subscribe(
+      data => this.movie = data,
+      error => console.error("Movies couldn't be found", error)
+    )
   }
 
 }
