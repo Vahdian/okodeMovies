@@ -4,8 +4,15 @@
   justify-content: center;
   flex-direction: column;
 
+  &--text {
+    text-align: center;
+    margin-top: 1rem;
+
+  }
+
   &--image {
     width: 50%;
     border-radius: 1rem;
+    margin-top: 8rem;
   }
 }
